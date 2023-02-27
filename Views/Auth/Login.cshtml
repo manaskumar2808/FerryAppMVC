@@ -1,0 +1,41 @@
+@model FerryApp.Models.ManasUser
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="LoginContainer">
+    <div class="LoginDisplay">
+        <img 
+            class="LoginImage" 
+            src="https://image.cnbcfm.com/api/v1/image/107078932-1655897308311-Saint-Malo-Extended-scaled_1.jpg?v=1655903662&w=1600&h=900" 
+            alt="Login Display Image"
+        />
+    </div>
+    <div class="LoginFields">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <legend class="LoginLegend">Login</legend>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label">Username</label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="LoginHelperContainer">
+                <a class="LoginHelper">Forgot password?</a>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary w-100" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

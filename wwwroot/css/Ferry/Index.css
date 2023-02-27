@@ -1,0 +1,209 @@
+.FerryContainer {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    background-color: #ccc;
+    height: 80vh;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.FerrySearchContainer {
+    width: 300px;
+    height: 100%;
+    margin: 0 20px;
+    box-sizing: border-box;
+}
+
+.FerrySearch {
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.FerryFieldContainer {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.FerryFieldLabel {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.FerryListContainer {
+    flex: 1;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.FerryList {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.FerryItem {
+    height: 320px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.FerryDisplay {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.FerryImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.FerryNameContainer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.FerryName {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.FerryContent {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.FerryContentUpper {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.FerryContentMiddle {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.FerryContentLower {
+    height: 40px;
+    width: 100%;
+}
+
+.FerryLocationContainer {
+    flex: 1;
+    height: 100%;
+    width: 200px;
+    text-align: center;
+}   
+
+.FerryLocationDisplay {
+    height: 85%;
+    width: 100%;
+    border-radius: 10px;
+    /* border: 0.5px solid #ccc; */
+    overflow: hidden;
+}
+
+.FerryLocationImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.FerryLocationText {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.FerryChargeContainer {
+    border: 2px solid #01b41f;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 5px;
+    text-align: center;
+    box-sizing: border-box;
+    /* height: 100%; */
+    justify-content: center;
+}
+
+.FerryChargeLegend {
+    font-size: 16px;
+    font-weight: 700;
+    color: #01b41f;
+    margin: 0;
+}
+
+.FerryChargeText {
+    font-size: 16px;
+    font-weight: 400;
+    color: #01b41f;
+    margin: 0;
+}
+
+.FerryRoomsContainer {
+    border: 2px solid #ff4e18;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 5px;
+    text-align: center;
+    box-sizing: border-box;
+    /* height: 100%; */
+}
+
+.FerryRoomsLegend {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff4e18;
+    margin: 0;
+}
+
+.FerryRoomsText {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ff4e18;
+    margin: 0;
+}
+
+.FerryDateTimeContainer {
+    border: 2px solid #3f3f3f;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 5px;
+    text-align: center;
+    box-sizing: border-box;
+    /* height: 100%; */
+}
+
+.FerryDateTimeLegend {
+    font-size: 16px;
+    font-weight: 700;
+    color: #3f3f3f;
+    margin: 0;
+}
+
+.FerryDateTimeText {
+    font-size: 16px;
+    font-weight: 400;
+    color: #3f3f3f;
+    margin: 0;
+}

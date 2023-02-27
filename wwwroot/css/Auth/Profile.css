@@ -1,0 +1,86 @@
+.ProfileContainer {
+    margin: auto;
+    background-color: #ccc;
+    height: 80vh;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.ProfileView {
+    height: 450px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    padding: 20px;
+    border: 0.5px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    /* overflow-y: scroll; */
+    background-color: #fff;
+    text-align: center;
+}
+
+.ProfileLegend {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.ProfileDisplay {
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.ProfileImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ProfileName {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.ProfileUserName {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1894ff;
+    margin: 0;
+}
+
+.ProfileWalletLabel {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.ProfileWallet {
+    font-size: 25px;
+    font-weight: 800;
+    color: #01b41f;
+}
+ 
+.BackToListContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.BackToListText {
+    font-size: 17px;
+    font-weight: 400;
+    color: #1894ff;
+    text-decoration: none;
+}
+
+
+

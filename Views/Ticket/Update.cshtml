@@ -1,0 +1,56 @@
+@model FerryApp.Models.ManasTicket
+
+@{
+    ViewData["Title"] = "Update Ticket";
+}
+
+<div class="TicketUpdateContainer">
+    <form asp-action="Update" class="TicketUpdateForm">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <p class="TicketUpdateLegend">Edit Booked Ticket</p>
+        <div class="form-group" style="display: none;">
+            <label asp-for="Id" class="control-label"></label>
+            <input asp-for="Id" class="form-control" />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AdultCount" class="control-label">Adults</label>
+            <input asp-for="AdultCount" type="number" class="form-control" min="1" max="10" />
+            <span asp-validation-for="AdultCount" class="text-danger"></span>
+        </div>
+        <div class="form-group" style="display: none;">
+            <label asp-for="Cost" class="control-label">Cost</label>
+            <input asp-for="Cost" type="number" class="form-control" />
+            <span asp-validation-for="Cost" class="text-danger"></span>
+        </div>
+        <div class="form-group" style="display: none;">
+            <label asp-for="RoomNo" class="control-label">Room No.</label>
+            <input asp-for="RoomNo" type="number" class="form-control" />
+            <span asp-validation-for="RoomNo" class="text-danger"></span>
+        </div>
+        <div class="form-group" style="display: none;">
+            <label asp-for="UserId" class="control-label">User</label>
+            @* <input asp-for="UserId" type="number" class="form-control" /> *@
+            <select asp-for="UserId" class="form-select" asp-items="@ViewBag.Users"></select>
+            <span asp-validation-for="UserId" class="text-danger"></span>
+        </div>
+        <div class="form-group" style="display: none;">
+            <label asp-for="FerryId" class="control-label">Ferry</label>
+            @* <input asp-for="FerryId" type="number" class="form-control" /> *@
+            <select asp-for="FerryId" class="form-select" asp-items="@ViewBag.Ferries"></select>
+            <span asp-validation-for="FerryId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary w-100" />
+        </div>
+        <div style="flex: 1;"></div>
+        <div class="BackToListContainer">
+            <a class="BackToListText" asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,31 @@
+.PrivacyContainer {
+    width: 100%;
+    height: 80vh;
+}
+
+.PrivacyLegend {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.PrivacyList {
+    height: 100%;
+    overflow-y: scroll;   
+}
+
+.PrivacyItem {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.PrivacyTitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1894ff;
+}
+
+.PrivacyText {
+    font-size: 17px;
+    font-weight: 400;
+}

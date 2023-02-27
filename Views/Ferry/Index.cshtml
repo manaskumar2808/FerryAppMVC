@@ -1,0 +1,99 @@
+@model IEnumerable<FerryApp.Models.ManasFerry>
+
+@{
+    ViewData["Title"] = "Ferries";  
+}
+
+<div class="FerryContainer">
+    <div class="FerrySearchContainer">
+        <form asp-action="Search" class="row FerrySearch" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="FerryFieldContainer">
+                <label for="origin-search" class="FerryFieldLabel">Origin</label>
+                <input type="text" class="form-control" name="origin" id="origin-search" placeholder="Origin" />
+            </div>
+            <div class="FerryFieldContainer">
+                <label for="destination-search" class="FerryFieldLabel">Destination</label>
+                <input type="text" class="form-control" name="destination" id="destination-search" placeholder="Destination" />
+            </div>
+            <div class="FerryFieldContainer">
+                <label for="name-search" class="FerryFieldLabel">Name</label>
+                <input type="text" class="form-control" name="name" id="name-search" placeholder="Name" />
+            </div>
+            <div class="FerryFieldContainer">
+                <label for="departure-search" class="FerryFieldLabel">Departure</label>
+                <input type="datetime-local" class="form-control" name="departure" id="departure-search" placeholder="Departure" />
+            </div>
+            <div class="FerryFieldContainer">
+                <label for="min-charge-search" class="FerryFieldLabel">Min Charge</label>
+                <input type="number" class="form-control" name="min_charge" id="min-charge-search" placeholder="Min Charge" min="0" max="10000" />
+            </div>
+            <div class="FerryFieldContainer">
+                <label for="max-charge-search" class="FerryFieldLabel">Max Charge</label>
+                <input type="number" class="form-control" name="max_charge" id="max-charge-search" placeholder="Max Charge" min="0" max="10000" />
+            </div>
+            <div class="FerryFieldContainer">
+                <button type="submit" class="btn btn-primary w-100" id="ferry-search-button">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="FerryListContainer">
+        <div class="FerryList">
+            @foreach (var ferry in Model)
+            {
+                <div class="FerryItem">
+                    <div class="FerryDisplay">
+                        <img src="@Href(ferry.Image)" alt=@ferry.Name class="FerryImage" />
+                        <div class="FerryNameContainer">
+                            <p class="FerryName">@ferry.Name</p>
+                        </div>
+                    </div>
+                    <div class="FerryContent">
+                        <div class="FerryContentUpper">
+                            <div class="FerryLocationContainer">
+                                <div class="FerryLocationDisplay">
+                                    <img src="@Href(ferry.Origin.Image)" alt=@ferry.Origin.Name class="FerryLocationImage" />
+                                </div>
+                                <p class="FerryLocationText">@ferry.Origin.Name</p>
+                            </div>
+                            <div style="width:5px"></div>
+                            <div>
+                                <p>To</p>
+                            </div>
+                            <div style="width:5px"></div>
+                            <div class="FerryLocationContainer">
+                                <div class="FerryLocationDisplay">
+                                    <img src="@Href(ferry.Destination.Image)" alt=@ferry.Destination.Name class="FerryLocationImage" />
+                                </div>
+                                <p class="FerryLocationText">@ferry.Destination.Name</p>
+                            </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="FerryContentMiddle">
+                            <div class="FerryChargeContainer">
+                                <legend class="FerryChargeLegend">Charge</legend>
+                                <p class="FerryChargeText">$@ferry.Charge</p>
+                            </div>
+                            <div style="width: 5px"></div>
+                            <div class="FerryRoomsContainer">
+                                <legend class="FerryRoomsLegend">Rooms Left</legend>
+                                <p class="FerryRoomsText">@ferry.RoomsLeft</p>
+                            </div>
+                            <div style="width: 5px"></div>
+                            <div class="FerryDateTimeContainer">
+                                <legend class="FerryDateTimeLegend">Departure</legend>
+                                <p class="FerryDateTimeText">@ferry.Departure</p>
+                            </div>
+                        </div>
+                        <div style="height: 10px"></div>
+                        <div class="FerryContentLower">
+                            <a asp-action="Create" asp-route-id="@ferry.Id" asp-controller="Ticket">
+                                <button class="btn btn-primary w-100">Book</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

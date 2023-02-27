@@ -1,0 +1,77 @@
+@model FerryApp.Models.ManasTicket
+
+@{
+    ViewData["Title"] = "Delete Ticket";
+}
+
+<div class="TicketDeleteContainer">
+    <div class="TicketDeleteItem">
+        <div class="TicketDeleteDisplay">
+            <img src="@Href(Model.Ferry.Image)" alt=@Model.Ferry.Name class="TicketDeleteImage" />
+            <div class="TicketDeleteNameContainer">
+                <p class="TicketDeleteName">@Model.Ferry.Name</p>
+            </div>
+        </div>
+        <div class="TicketDeleteContent">
+            <div class="TicketDeleteLegendContainer">
+                <legend class="TicketDeleteLegend">Delete Booked Ticket</legend>
+            </div>
+            <div class="TicketDeleteContentUpper">
+                <div class="TicketDeleteLocationContainer">
+                    <div class="TicketDeleteLocationDisplay">
+                        <img src="@Href(Model.Ferry.Origin.Image)" alt=@Model.Ferry.Origin.Name class="FerryLocationImage" />
+                    </div>
+                    <p class="TicketDeleteLocationText">@Model.Ferry.Origin.Name</p>
+                </div>
+                <div style="width:5px"></div>
+                <div>
+                    <p>To</p>
+                </div>
+                <div style="width:5px"></div>
+                <div class="TicketDeleteLocationContainer">
+                    <div class="TicketDeleteLocationDisplay">
+                        <img src="@Href(Model.Ferry.Destination.Image)" alt=@Model.Ferry.Destination.Name class="TicketDeleteLocationImage" />
+                    </div>
+                    <p class="TicketDeleteLocationText">@Model.Ferry.Destination.Name</p>
+                </div>
+            </div>
+            <div style="height: 20px"></div>
+            <div class="TicketDeleteContentMiddle">
+                <div class="TicketDeleteInfoContainer TicketDeleteCharge">
+                    <legend class="TicketDeleteInfoLegend">Cost</legend>
+                    <p class="TicketDeleteInfoText">$@Model.Cost</p>
+                </div>
+                <div style="height: 10px"></div>
+                <div class="TicketDeleteInfoContainer TicketDeleteRooms">
+                    <legend class="TicketDeleteInfoLegend">Rooms No.</legend>
+                    <p class="TicketDeleteInfoText">@Model.RoomNo</p>
+                </div>
+                <div style="height: 10px"></div>
+                <div class="TicketDeleteInfoContainer TicketDeleteAdult">
+                    <legend class="TicketDeleteInfoLegend">Adults</legend>
+                    <p class="TicketDeleteInfoText">@Model.AdultCount</p>
+                </div>
+                <div style="height: 10px"></div>
+                <div class="TicketDeleteInfoContainer TicketDeleteDateTime">
+                    <legend class="TicketDeleteInfoLegend">Departure</legend>
+                    <p class="TicketDeleteInfoText">@Model.Ferry.Departure</p>
+                </div>
+            </div>
+            <div style="flex: 1;"></div>
+            <div class="TicketDeleteContentLower">
+                <div class="TicketDeleteButtonContainer">
+                    <p>Are you sure you want to delete this ticket?</p>
+                </div>
+                <div style="height: 10px;"></div>
+                    <form asp-action="Delete" asp-controller="Ticket" class="TicketDeleteButtonContainer">
+                        <input asp-for="Id" name="id" hidden />
+                        <input type="submit" value="Delete" class="btn btn-danger w-100" />
+                    </form>
+                <div style="height: 10px"></div>
+                <div class="TicketDeleteButtonContainer">
+                    <a asp-action="Index">Back To List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

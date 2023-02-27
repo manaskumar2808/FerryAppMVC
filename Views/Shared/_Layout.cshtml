@@ -1,0 +1,130 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{ 
+    ViewBag.Data = @HttpContextAccessor.HttpContext.Session.GetString("username");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ferryhopper</title>
+    <link rel="icon" href="~/ferryhopper.png" size="100x100" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Home/Index.css" />
+    <link rel="stylesheet" href="~/css/Home/About.css" />
+    <link rel="stylesheet" href="~/css/Home/Contact.css" />
+    <link rel="stylesheet" href="~/css/Home/Privacy.css" />
+    <link rel="stylesheet" href="~/css/Auth/Login.css" />
+    <link rel="stylesheet" href="~/css/Auth/Profile.css" />
+    <link rel="stylesheet" href="~/css/Ferry/Index.css" />
+    <link rel="stylesheet" href="~/css/Ticket/Index.css" />
+    <link rel="stylesheet" href="~/css/Ticket/Create.css" />
+    <link rel="stylesheet" href="~/css/Ticket/Show.css" />
+    <link rel="stylesheet" href="~/css/Ticket/Update.css" />
+    <link rel="stylesheet" href="~/css/Ticket/Delete.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope" />
+</head>
+<style>
+    .Brand {
+        font-family: 'Lobster', serif;
+        font-size: 27px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .Brand::first-letter {
+        color: #1894ff;
+    }
+
+    .Nav {
+        font-size: 17px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .UserName {
+        color: #1894ff;
+        margin: 0;
+        display: inline;
+    }
+
+    body {
+        font-family: 'Manrope', sans-serif;
+    }
+
+    #manage {
+        margin-top: 5px;
+    }
+
+    #register {
+        margin-top: 5px;
+    }
+
+    #login {
+        margin-top: 3px;
+    }
+
+    #logout {
+        margin-top: 3px;
+    }
+</style>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white mb-3">
+            <div class="container">
+                <a class="navbar-brand Brand" asp-area="" asp-controller="Home" asp-action="Index">Ferryhopper</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div style="flex: 1;"></div>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark Nav" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark Nav" asp-area="" asp-controller="Ferry" asp-action="Index">Ferries</a>
+                        </li>
+                        @if(ViewBag.Data != null) {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark Nav" asp-area="" asp-controller="Ticket" asp-action="Index">Tickets</a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark Nav" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark Nav" asp-area="" asp-controller="Home" asp-action="About">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark Nav" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                    </ul>
+                    <partial name="LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted">
+        <div class="container">
+            &copy; 2023 - Ferryhopper - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

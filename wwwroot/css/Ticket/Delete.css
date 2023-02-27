@@ -1,0 +1,160 @@
+.TicketDeleteContainer {
+    flex-direction: row;
+    margin: auto;
+    background-color: #ccc;
+    height: 80vh;
+    width: 100%;
+    border-radius: 10px;
+    border: 0.5px solid #ccc;
+}
+
+.TicketDeleteLegendContainer {
+    text-align: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.TicketDeleteLegend {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.TicketDeleteItem {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.TicketDeleteDisplay {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    background-color: #000;
+}
+
+.TicketDeleteImage {
+    width: 100%;
+    object-fit: contain;
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.TicketDeleteNameContainer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.TicketDeleteName {
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.TicketDeleteContent {
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.TicketDeleteContentUpper {
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.TicketDeleteContentMiddle {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.TicketDeleteContentLower {
+    width: 100%;
+    align-items: center;
+}
+
+.TicketDeleteLocationContainer {
+    flex: 1;
+    height: 100%;
+    width: 200px;
+    text-align: center;
+}   
+
+.TicketDeleteLocationDisplay {
+    height: 85%;
+    width: 100%;
+    border-radius: 10px;
+    /* border: 0.5px solid #ccc; */
+    overflow: hidden;
+}
+
+.TicketDeleteLocationImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.TicketDeleteLocationText {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.TicketDeleteInfoContainer {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 5px;
+    text-align: center;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.TicketDeleteInfoLegend {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.TicketDeleteInfoText {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+}
+
+.TicketDeleteCharge {
+    background-color: #1894ff;
+}
+
+.TicketDeleteRooms {
+    background-color: #ff4e18;
+}
+
+.TicketDeleteAdult {
+    background-color: #7800af;
+}
+
+.TicketDeleteDateTime {
+    background-color: #3f3f3f;
+}
+
+.TicketDeleteButtonContainer {
+    flex: 1;
+    text-align: center;
+}

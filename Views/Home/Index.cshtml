@@ -1,0 +1,72 @@
+﻿@model IEnumerable<FerryApp.Models.ManasPort>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="HomeContainer">
+    <div class="HomeDisplay">
+        @* <div class="HomeOverlay"></div> *@
+        <img class="HomeImage" src="https://burst.shopifycdn.com/photos/calm-water-in-european-city.jpg?width=1200&format=pjpg&exif=1&iptc=1" alt="Home Display Image" />
+        <div class="HomeLegendContainer">
+            <legend class="HomeLegend">
+                Welcome to Ferryhopper!
+            </legend>
+            <div style="height: 20px"></div>
+            <a asp-action="Index" asp-controller="Ferry">
+                <button class="btn btn-lg btn-primary">
+                    View Ferries
+                </button>
+            </a>
+        </div>
+    </div>
+    <div style="height: 20px;"></div>
+    <legend class="HomeSectionLegend">Ports We Visit</legend>
+    <div class="HomePortList">
+        @foreach (var port in Model)
+        {   
+            <div class="HomePortItem">
+                <div class="HomePortItemDisplay">
+                    <img class="HomePortItemImage" src="@Href(port.Image)" alt="@port.Name" />
+                    <div class="HomePortItemNameContainer">
+                        <p class="HomePortItemName">@port.Name</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div style="height: 20px;"></div>
+    <legend class="HomeSectionLegend">Our Specialities</legend>
+    <div class="HomeCardList">
+        <div class="HomeCardItem">
+            <div class="HomeCard">
+                <legend class="HomeCardTitle">What we offer</legend>
+                <p class="HomeCardText">We specialize exclusively in ferry trips and we realize that nothing works without trust. Our top goal is to build trust with you, the potential passengers, and with the ferry operators in order to provide optimized services.</p>
+            </div>
+        </div>
+        <div class="HomeCardItem">
+            <div class="HomeCard">
+                <legend class="HomeCardTitle">Free services through redirection</legend>
+                <p class="HomeCardText">Our services are always free to travelers without any hidden charges or commissions. At the final step of your search while locking your reservation, you will be transferred to the site of the operator of your choice, to complete the transaction.</p>
+            </div>
+        </div>
+        <div class="HomeCardItem">
+            <div class="HomeCard">
+                <legend class="HomeCardTitle">Important information and statistics for destinations, ferries and ports</legend>
+                <p class="HomeCardText">Frequent updates are made with valid information about destinations, as well as news and relevant statistics. You may wish to drop an eye on our blog (under construction) for the latest news.</p>
+            </div>
+        </div>
+        <div class="HomeCardItem">
+            <div class="HomeCard">
+                <legend class="HomeCardTitle">A user-friendly platform</legend>
+                <p class="HomeCardText">Avoid bouncing from one ferry site to the other and wasting your precious time. We offer a stylish and fast platform to help you find all ferries and ferry operators for the route of choice.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@* https://wallpapercave.com/wp/wp2439713.jpg
+https://burst.shopifycdn.com/photos/calm-water-in-european-city.jpg?width=1200&format=pjpg&exif=1&iptc=1
+https://www.trsinc.com/wp-content/themes/travelservices/images/default-banner-mobile.jpg *@

@@ -1,0 +1,80 @@
+@model FerryApp.Models.ManasTicket
+
+@{
+    ViewData["Title"] = "Show Ticket";
+}
+
+<div class="TicketShowContainer">
+    <div class="TicketShowItem">
+        <div class="TicketShowDisplay">
+            <img src="@Href(Model.Ferry.Image)" alt=@Model.Ferry.Name class="TicketShowImage" />
+            <div class="TicketShowNameContainer">
+                <p class="TicketShowName">@Model.Ferry.Name</p>
+            </div>
+        </div>
+        <div class="TicketShowContent">
+            <div class="TicketShowLegendContainer">
+                <legend class="TicketShowLegend">Booked Ticket Details</legend>
+            </div>
+            <div class="TicketShowContentUpper">
+                <div class="TicketShowLocationContainer">
+                    <div class="TicketShowLocationDisplay">
+                        <img src="@Href(Model.Ferry.Origin.Image)" alt=@Model.Ferry.Origin.Name class="FerryLocationImage" />
+                    </div>
+                    <p class="TicketShowLocationText">@Model.Ferry.Origin.Name</p>
+                </div>
+                <div style="width:5px"></div>
+                <div>
+                    <p>To</p>
+                </div>
+                <div style="width:5px"></div>
+                <div class="TicketShowLocationContainer">
+                    <div class="TicketShowLocationDisplay">
+                        <img src="@Href(Model.Ferry.Destination.Image)" alt=@Model.Ferry.Destination.Name class="TicketShowLocationImage" />
+                    </div>
+                    <p class="TicketShowLocationText">@Model.Ferry.Destination.Name</p>
+                </div>
+            </div>
+            <div style="height: 20px"></div>
+            <div class="TicketShowContentMiddle">
+                <div class="TicketShowInfoContainer TicketShowCharge">
+                    <legend class="TicketShowInfoLegend">Cost</legend>
+                    <p class="TicketShowInfoText">$@Model.Cost</p>
+                </div>
+                <div style="height: 10px"></div>
+                <div class="TicketShowInfoContainer TicketShowRooms">
+                    <legend class="TicketShowInfoLegend">Rooms No.</legend>
+                    <p class="TicketShowInfoText">@Model.RoomNo</p>
+                </div>
+                <div style="height: 10px"></div>
+                <div class="TicketShowInfoContainer TicketShowAdult">
+                    <legend class="TicketShowInfoLegend">Adults</legend>
+                    <p class="TicketShowInfoText">@Model.AdultCount</p>
+                </div>
+                <div style="height: 10px"></div>
+                <div class="TicketShowInfoContainer TicketShowDateTime">
+                    <legend class="TicketShowInfoLegend">Departure</legend>
+                    <p class="TicketShowInfoText">@Model.Ferry.Departure</p>
+                </div>
+            </div>
+            <div style="flex: 1;"></div>
+            <div class="TicketShowContentLower">
+                <div class="TicketShowButtonContainer">
+                    <a asp-action="Update" asp-route-id="@Model.Id">
+                        <button class="btn btn-dark w-100">Edit</button>
+                    </a>
+                </div>
+                <div style="width: 10px;"></div>
+                <div class="TicketShowButtonContainer">
+                    <a asp-action="Delete" asp-route-id="@Model.Id">
+                        <button class="btn btn-danger w-100">Delete</button>
+                    </a>
+                </div>
+            </div>
+            <div style="height: 10px"></div>
+            <div class="TicketShowMoveBackContainer">
+                <a asp-action="Index">Back To List</a>
+            </div>
+        </div>
+    </div>
+</div>

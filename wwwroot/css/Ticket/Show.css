@@ -1,0 +1,167 @@
+.TicketShowContainer {
+    flex-direction: row;
+    margin: auto;
+    background-color: #ccc;
+    height: 80vh;
+    width: 100%;
+    border-radius: 10px;
+    border: 0.5px solid #ccc;
+}
+
+.TicketShowLegendContainer {
+    text-align: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.TicketShowLegend {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.TicketShowItem {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.TicketShowDisplay {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    background-color: #000;
+}
+
+.TicketShowImage {
+    width: 100%;
+    object-fit: contain;
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.TicketShowNameContainer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
+
+.TicketShowName {
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.TicketShowContent {
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.TicketShowContentUpper {
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.TicketShowContentMiddle {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.TicketShowContentLower {
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 100%;
+}
+
+.TicketShowLocationContainer {
+    flex: 1;
+    height: 100%;
+    width: 200px;
+    text-align: center;
+}   
+
+.TicketShowLocationDisplay {
+    height: 85%;
+    width: 100%;
+    border-radius: 10px;
+    /* border: 0.5px solid #ccc; */
+    overflow: hidden;
+}
+
+.TicketShowLocationImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.TicketShowLocationText {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.TicketShowInfoContainer {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 5px;
+    text-align: center;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.TicketShowInfoLegend {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.TicketShowInfoText {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+}
+
+.TicketShowCharge {
+    background-color: #1894ff;
+}
+
+.TicketShowRooms {
+    background-color: #ff4e18;
+}
+
+.TicketShowAdult {
+    background-color: #7800af;
+}
+
+.TicketShowDateTime {
+    background-color: #3f3f3f;
+}
+
+.TicketShowButtonContainer {
+    flex: 1;
+    text-align: center;
+}
+
+.TicketShowMoveBackContainer {
+    width: 100%;
+    text-align: center;
+}

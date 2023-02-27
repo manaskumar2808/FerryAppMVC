@@ -1,0 +1,126 @@
+@model IEnumerable<FerryApp.Models.ManasTicket>
+
+@{
+    ViewData["Title"] = "Tickets";  
+}
+
+<div class="TicketContainer">
+    <div class="TicketSearchContainer">
+        <form asp-action="Search" class="row TicketSearch" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="TicketFieldContainer">
+                <label for="name-search" class="TicketFieldLabel">Name</label>
+                <input type="text" class="form-control" name="name" id="name-search" placeholder="Name" />
+            </div> *@
+            <div class="TicketFieldContainer">
+                <label for="origin-search" class="TicketFieldLabel">Origin</label>
+                <input type="text" class="form-control" name="origin" id="origin-search" placeholder="Origin" />
+            </div>
+            <div class="TicketFieldContainer">
+                <label for="destination-search" class="TicketFieldLabel">Destination</label>
+                <input type="text" class="form-control" name="destination" id="destination-search" placeholder="Destination" />
+            </div>
+            <div class="TicketFieldContainer">
+                <label for="ferry-search" class="TicketFieldLabel">Ferry</label>
+                <input type="text" class="form-control" name="ferry" id="ferry-search" placeholder="Ferry" />
+            </div>
+            <div class="TicketFieldContainer">
+                <label for="departure-search" class="TicketFieldLabel">Departure</label>
+                <input type="datetime-local" class="form-control" name="departure" id="departure-search" placeholder="Departure" />
+            </div>
+            <div class="TicketFieldContainer">
+                <label for="min-cost-search" class="TicketFieldLabel">Min Cost</label>
+                <input type="number" class="form-control" name="min_cost" id="min-cost-search" placeholder="Min Cost" min="0" />
+            </div>
+            <div class="TicketFieldContainer">
+                <label for="max-cost-search" class="TicketFieldLabel">Max Cost</label>
+                <input type="number" class="form-control" name="max_cost" id="max-cost-search" placeholder="Max Cost" min="0" />
+            </div>
+            <div class="TicketFieldContainer">
+                <button type="submit" class="btn btn-primary w-100" id="ferry-search-button">Search</button>
+            </div>
+        </form>
+    </div>
+    <div class="TicketListContainer">
+        <div class="TicketListLegendContainer">
+            <legend class="TicketListLegend">Booked Tickets</legend>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="TicketList">
+            @foreach (var ticket in Model)
+            {
+                <div class="TicketItem">
+                    <div class="TicketDisplay">
+                        <img src="@Href(ticket.Ferry.Image)" alt=@ticket.Ferry.Name class="TicketImage" />
+                        <div class="TicketNameContainer">
+                            <p class="TicketName">@ticket.Ferry.Name</p>
+                        </div>
+                    </div>
+                    <div class="TicketContent">
+                        <div class="TicketContentUpper">
+                            <div class="TicketLocationContainer">
+                                <div class="TicketLocationDisplay">
+                                    <img src="@Href(ticket.Ferry.Origin.Image)" alt=@ticket.Ferry.Origin.Name class="FerryLocationImage" />
+                                </div>
+                                <p class="TicketLocationText">@ticket.Ferry.Origin.Name</p>
+                            </div>
+                            <div style="width:5px"></div>
+                            <div>
+                                <p>To</p>
+                            </div>
+                            <div style="width:5px"></div>
+                            <div class="TicketLocationContainer">
+                                <div class="TicketLocationDisplay">
+                                    <img src="@Href(ticket.Ferry.Destination.Image)" alt=@ticket.Ferry.Destination.Name class="TicketLocationImage" />
+                                </div>
+                                <p class="TicketLocationText">@ticket.Ferry.Destination.Name</p>
+                            </div>
+                        </div>
+                        <div style="height: 20px"></div>
+                        <div class="TicketContentMiddle">
+                            <div class="TicketInfoContainer TicketCharge">
+                                <legend class="TicketInfoLegend">Cost</legend>
+                                <p class="TicketInfoText">$@ticket.Cost</p>
+                            </div>
+                            <div style="width: 5px"></div>
+                            <div class="TicketInfoContainer TicketRooms">
+                                <legend class="TicketInfoLegend">Rooms No.</legend>
+                                <p class="TicketInfoText">@ticket.RoomNo</p>
+                            </div>
+                            <div style="width: 5px"></div>
+                            <div class="TicketInfoContainer TicketAdult">
+                                <legend class="TicketInfoLegend">Adults</legend>
+                                <p class="TicketInfoText">@ticket.AdultCount</p>
+                            </div>
+                            <div style="width: 5px"></div>
+                            <div class="TicketInfoContainer TicketDateTime">
+                                <legend class="TicketInfoLegend">Departure</legend>
+                                <p class="TicketInfoText">@ticket.Ferry.Departure</p>
+                            </div>
+                        </div>
+                        <div style="flex: 1;"></div>
+                        <div class="TicketContentLower">
+                            <div class="TicketButtonContainer">
+                                <a asp-action="Update" asp-route-id="@ticket.Id">
+                                    <button class="btn btn-dark w-100">Edit</button>
+                                </a>
+                            </div>
+                            <div style="width: 10px;"></div>
+                            <div class="TicketButtonContainer">
+                                <a asp-action="Show" asp-route-id="@ticket.Id">
+                                    <button class="btn btn-primary w-100">Show</button>
+                                </a>
+                            </div>
+                            <div style="width: 10px;"></div>
+                            <div class="TicketButtonContainer">
+                                <a asp-action="Delete" asp-route-id="@ticket.Id">
+                                    <button class="btn btn-danger w-100">Delete</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

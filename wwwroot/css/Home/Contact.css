@@ -1,0 +1,36 @@
+.ContactContainer {
+    height: 80vh;
+    text-align: center;
+}
+
+.ContactLegend {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.ContactList {
+    width: 400px;
+    height: 100%;
+    overflow-y: scroll;   
+    margin: auto;
+}
+
+.ContactItem {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.ContactTitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1894ff;
+    text-align: center;
+}
+
+.ContactText {
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+}
